@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-	rofi -show run -config $DOTFILES/rofi/rofi.conf
+	rofi -show run -config $DOTFILES/rofi.conf
 
 # make sxhkd reload its configuration files:
 super + Escape
