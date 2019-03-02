@@ -1,0 +1,24 @@
+color normal        white           default
+color error         red             default
+color tilde         black           default
+color message       cyan            default
+color markers       red             white
+color attachment    white           default
+color search        brightmagenta   default
+color status        yellow          default
+color indicator     brightwhite     default
+color tree          yellow          default
+color index_author  blue            default ".*"
+color index_subject green           default ".*"
+color index_flags   magenta         default ".*"
+
+color quoted        blue            default
+color quoted1       cyan            default
+color quoted2       yellow          default
+color quoted3       red             default
+color quoted4       magenta         default
+color signature     green           default
+
+color hdrdefault    brightwhite     default
+color header        brightblue      default "^(From)"
+color header        brightgreen     default "^(Subject)"

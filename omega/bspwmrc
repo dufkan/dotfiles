@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#xrdb ~/.Xresources
+feh --bg-center $DOTFILES/resources/bg.* &
+compton -C &
+dunst &
+sxhkd &
+polybar -r top &
+polybar -r bottom &
+
+bspc monitor eDP1 -d I II III IV V VI
+bspc monitor HDMI1 -d HDMI
+
+bspc config border_width        1
+bspc config window_gap          12
+
+bspc config split_ratio         0.5
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+
+bspc config click_to_focus      true
+
+bash $DOTFILES/resources/theme.sh
+
+#bspc desktop II -l monocle
+#bspc desktop III -l monocle
+
+#bspc rule -a Firefox top='^2' follow=off
+#bspc rule -a Atom desktop='^3'
+#bspc rule -a jetbrains-clion desktop='^3'
+#bspc rule -a jetbrains-idea desktop='^3'

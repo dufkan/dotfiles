@@ -1,0 +1,73 @@
+set number
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set laststatus=0
+set relativenumber
+syntax on
+
+map <silent> <F7>   :tabp<CR>
+map <silent> <F8>   :tabn<CR>
+map <silent> <F2>   :NERDTreeToggle<CR>
+map          <F3>   :let @+=@"<CR>
+map <silent> <F4>   :split term://fish<CR>
+map <silent> <F5>   :call LanguageClient#textDocument_hover()<CR>
+map <silent> <F10>s :LanguageClientStart<CR>
+map <silent> <F10>x :LanguageClientStop<CR>
+map <silent> <F10>d :call LanguageClient_textDocument_definition()<CR>
+map <silent> <F10>h :call LanguageClient_textDocument_hover()<CR>
+map <silent> <F10>r :call LanguageClient_textDocument_rename()<CR>
+map <silent> <F10>f :call LanguageClient_textDocument_formatting()<CR>
+map <silent> <F10>c :call LanguageClient_textDocument_references()<CR>
+
+set listchars=tab:>-,trail:.
+set list
+
+set t_Co=256
+
+hi CursorLine term=bold cterm=bold ctermbg=black
+
+set hidden
+
+au BufRead /tmp/mutt-* set tw=72
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['/usr/bin/rls'],
+    \ 'cpp': ['/usr/bin/clangd'],
+    \ }
+let g:LanguageClient_autoStart = 0
+let g:LanguageClient_diagnosticsDisplay =  {
+      \ 1: {
+      \ "name": "Error",
+      \ "texthl": "ALEError",
+      \ "signText": "⛔️",
+      \ "signTexthl": "ALEErrorSign",
+      \ },
+      \ 2: {
+      \ "name": "Warning",
+      \ "texthl": "ALEWarning",
+      \ "signText": "⚠️",
+      \ "signTexthl": "ALEWarningSign",
+      \ },
+      \ 3: {
+      \ "name": "Information",
+      \ "texthl": "ALEInfo",
+      \ "signText": "ℹ",
+      \ "signTexthl": "ALEInfoSign",
+      \ },
+      \ 4: {
+      \ "name": "Hint",
+      \ "texthl": "ALEInfo",
+      \ "signText": "➤",
+      \ "signTexthl": "ALEInfoSign",
+      \ },
+\ }
+
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+call plug#end()

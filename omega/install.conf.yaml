@@ -1,0 +1,38 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- clean:
+    ~/.config:
+      force: true
+
+- link:
+    ~/.profile: 'profile'
+    ~/.bashrc: 'bashrc'
+
+    ~/.xinitrc: 'xinitrc'
+    ~/.config/bspwm/bspwmrc: 'bspwmrc'
+    ~/.config/sxhkd/sxhkdrc: 'sxhkdrc'
+
+    ~/.config/alacritty/alacritty.yml: 'alacritty.yml'
+    ~/.config/polybar/config: 'polybar.conf'
+    ~/.config/dunst/dunstrc: 'dunstrc'
+    ~/.config/rofi/theme.rasi: 'rofi.rasi'
+    ~/.config/rofi/rofi.conf: 'rofi.conf'
+    ~/.config/fish/config.fish: 'fish.conf'
+
+    ~/.neomuttrc: 'neomuttrc'
+    ~/.signature: 'signature'
+
+    ~/.tmux.conf: 'tmux.conf'
+
+    ~/.vimrc: 'vimrc'
+    ~/.config/nvim/init.vim: 'nvimrc'
+
+    ~/.Renviron: 'Renviron'
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

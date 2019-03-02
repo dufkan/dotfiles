@@ -1,0 +1,14 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export DOTFILES="$HOME/.dotfiles/omega"
+export TZ='Europe/Prague'
+export CC=clang
+export CXX=clang++
+export EDITOR=nvim
+
+export npm_config_prefix="$HOME/.node_modules"
+
+PATH="${PATH}:$HOME/.local/bin"
+PATH="${PATH}:$HOME/.gem/ruby/2.5.0/bin"
+PATH="${PATH}:$HOME/.cargo/bin"
+PATH="${PATH}:$HOME/.node_modules/bin"
+export PATH

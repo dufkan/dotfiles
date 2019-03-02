@@ -1,0 +1,15 @@
+alias ls='ls --color=auto'
+alias ll='ls -l --color=auto'
+alias la='ls -la --color=auto'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias vi='nvim'
+alias vim='nvim'
+alias mutt='neomutt'
+
+export GPG_TTY=$(tty)
+export TERM=xterm-256color
+
+PS1='[\u@\h \W]\$ '
