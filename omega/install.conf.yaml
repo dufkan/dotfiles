@@ -24,6 +24,7 @@
     ~/.config/rofi/theme.rasi: 'rofi.rasi'
     ~/.config/rofi/rofi.conf: 'rofi.conf'
     ~/.config/fish/config.fish: 'fish.conf'
+    ~/.config/compton.conf: 'compton.conf'
 
     ~/.neomuttrc: 'neomuttrc'
     ~/.signature: 'signature'
