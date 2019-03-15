@@ -11,15 +11,8 @@ map <silent> <F7>   :tabp<CR>
 map <silent> <F8>   :tabn<CR>
 map <silent> <F2>   :NERDTreeToggle<CR>
 map          <F3>   :let @+=@"<CR>
-map <silent> <F4>   :split term://fish<CR>
-map <silent> <F5>   :call LanguageClient#textDocument_hover()<CR>
-map <silent> <F10>s :LanguageClientStart<CR>
-map <silent> <F10>x :LanguageClientStop<CR>
-map <silent> <F10>d :call LanguageClient_textDocument_definition()<CR>
-map <silent> <F10>h :call LanguageClient_textDocument_hover()<CR>
-map <silent> <F10>r :call LanguageClient_textDocument_rename()<CR>
-map <silent> <F10>f :call LanguageClient_textDocument_formatting()<CR>
-map <silent> <F10>c :call LanguageClient_textDocument_references()<CR>
+map <silent> <F10>  :ALEToggle<CR>
+map <silent> <F11>  :ALEFix<CR>
 
 set listchars=tab:>-,trail:.
 set list
@@ -32,42 +25,24 @@ set hidden
 
 au BufRead /tmp/mutt-* set tw=72
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['/usr/bin/rls'],
-    \ 'cpp': ['/usr/bin/clangd'],
-    \ }
-let g:LanguageClient_autoStart = 0
-let g:LanguageClient_diagnosticsDisplay =  {
-      \ 1: {
-      \ "name": "Error",
-      \ "texthl": "ALEError",
-      \ "signText": "⛔️",
-      \ "signTexthl": "ALEErrorSign",
-      \ },
-      \ 2: {
-      \ "name": "Warning",
-      \ "texthl": "ALEWarning",
-      \ "signText": "⚠️",
-      \ "signTexthl": "ALEWarningSign",
-      \ },
-      \ 3: {
-      \ "name": "Information",
-      \ "texthl": "ALEInfo",
-      \ "signText": "ℹ",
-      \ "signTexthl": "ALEInfoSign",
-      \ },
-      \ 4: {
-      \ "name": "Hint",
-      \ "texthl": "ALEInfo",
-      \ "signText": "➤",
-      \ "signTexthl": "ALEInfoSign",
-      \ },
-\ }
+:highlight ALEError ctermbg=none cterm=underline
+:highlight ALEWarning ctermbg=none cterm=underline
+let g:ale_enabled = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+  \ 'c': ['clang'],
+  \ 'cpp': ['clang'],
+  \ 'rust': ['rls'],
+  \ }
+let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'c': ['clang-format'],
+  \ 'cpp': ['clang-format'],
+  \ }
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'w0rp/ale'
 call plug#end()
