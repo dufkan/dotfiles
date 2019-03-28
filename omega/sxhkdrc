@@ -1,16 +1,20 @@
-#
-# wm independent hotkeys
-#
+#######################
+### GENERAL HOTKEYS ###
+#######################
 
-# terminal emulator
+# term with tmux
 super + Return
 	alacritty -e tmux -f $DOTFILES/tmux.alacritty.conf
 
-# program launcher
+# term with tmux attach
+super + shift + Return
+	alacritty -e tmux a
+
+# rofi
 super + space
 	rofi -show run -config $DOTFILES/rofi.conf
 
-# make sxhkd reload its configuration files:
+# sxhkd reload
 super + Escape
 	pkill -USR1 -x sxhkd
 
@@ -18,9 +22,42 @@ super + Escape
 super + Pause
 	slock
 
-#
-# bspwm hotkeys
-#
+# decrease brightness
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+# increase brightness
+XF86MonBrightnessUp
+	xbacklight -inc 10
+
+# decrease volume
+XF86AudioLowerVolume
+	amixer -q sset Master 5%-
+
+# increase volume
+XF86AudioRaiseVolume
+	amixer -q sset Master 5%+
+
+# mute sound
+XF86AudioMute
+	amixer -q sset Master toggle
+
+# take screenshot
+Print
+	scrot --quality 100 ~/Screenshots/screen-`date +%s`.jpg && notify-send --urgency=normal "Screenshot" "New screenshot taken"
+
+# take screenshot delayed
+ctrl + Print
+	scrot --quality 100 -d 10 ~/Screenshots/screen-`date +%s`.jpg && notify-send --urgency=normal "Screenshot" "New screenshot taken"
+
+# rotate screen
+super + shift + {Left,Down,Up,Right}
+	xrandr -o {left,normal,inverted,right}
+
+
+#####################
+### BSPWM HOTKEYS ###
+#####################
 
 # quit bspwm normally
 super + alt + Escape
@@ -42,9 +79,7 @@ super + y
 super + g
 	bspc node -s biggest
 
-#
-# state/flags
-#
+## state/flags ##
 
 # set the window state
 super + {t,shift + t,s,f}
@@ -54,9 +89,7 @@ super + {t,shift + t,s,f}
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
-#
-# focus/swap
-#
+## focus/swap ##
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -100,9 +133,7 @@ super + {Prior,Next}
 super + shift + {Prior,Next}
 	bspc node -m {HDMI1, eDP1} -f
 
-#
-# preselect
-#
+## preselect ##
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -120,9 +151,7 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+## move/resize ##
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -139,39 +168,3 @@ super + {Left,Down,Up,Right}
 # rotate desktop
 super + r
 	bspc node @/ -R 90
-
-#
-# function keys
-#
-
-# decrease brightness
-XF86MonBrightnessDown
-	xbacklight -dec 10
-
-# increase brightness
-XF86MonBrightnessUp
-	xbacklight -inc 10
-
-# decrease volume
-XF86AudioLowerVolume
-	amixer -q sset Master 5%-
-
-# increase volume
-XF86AudioRaiseVolume
-	amixer -q sset Master 5%+
-
-# mute sound
-XF86AudioMute
-	amixer -q sset Master toggle
-
-# take screenshot
-Print
-	scrot --quality 100 ~/Screenshots/screen-`date +%s`.jpg && notify-send --urgency=normal "Screenshot" "New screenshot taken"
-
-# take screenshot delayed
-ctrl + Print
-	scrot --quality 100 -d 10 ~/Screenshots/screen-`date +%s`.jpg && notify-send --urgency=normal "Screenshot" "New screenshot taken"
-
-# rotate screen
-super + shift + {Left,Down,Up,Right}
-	xrandr -o {left,normal,inverted,right}
