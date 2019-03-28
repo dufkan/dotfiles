@@ -25,6 +25,7 @@
     ~/.config/rofi/rofi.conf: 'rofi.conf'
     ~/.config/fish/config.fish: 'fish.conf'
     ~/.config/compton.conf: 'compton.conf'
+    ~/.XCompose: 'XCompose'
 
     ~/.neomuttrc: 'neomuttrc'
     ~/.signature: 'signature'

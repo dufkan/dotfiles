@@ -4,6 +4,7 @@ export TZ='Europe/Prague'
 export CC=clang
 export CXX=clang++
 export EDITOR=nvim
+export GTK_IM_MODULE=xim
 
 export npm_config_prefix="$HOME/.node_modules"
 
@@ -12,3 +13,6 @@ PATH="${PATH}:$HOME/.gem/ruby/2.5.0/bin"
 PATH="${PATH}:$HOME/.cargo/bin"
 PATH="${PATH}:$HOME/.node_modules/bin"
 export PATH
+
+LD_LIBRARY_PATH="/usr/local/lib"
+export LD_LIBRARY_PATH
