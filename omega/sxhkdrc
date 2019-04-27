@@ -10,6 +10,10 @@ super + Return
 super + shift + Return
 	alacritty -e tmux a
 
+# term without tmux
+super + ctrl + Return
+	alacritty
+
 # rofi
 super + space
 	rofi -show run -config $DOTFILES/rofi.conf
