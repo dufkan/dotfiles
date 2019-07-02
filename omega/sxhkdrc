@@ -20,7 +20,7 @@ super + space
 
 # sxhkd reload
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd && notify-send --urgency=normal "Sxhkd" "Sxhdk reloaded"
 
 # screen lock
 super + Pause
