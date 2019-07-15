@@ -45,4 +45,6 @@ let g:ale_fixers = {
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+Plug 'tomtom/tcomment_vim'
+Plug 'ervandew/supertab'
 call plug#end()
