@@ -14,9 +14,9 @@ super + shift + Return
 super + ctrl + Return
 	alacritty
 
-# rofi
+# app menu
 super + space
-	rofi -show run -config $DOTFILES/rofi.conf
+	sh $DOTFILES/rofi/scripts/appsmenu.sh
 
 # sxhkd reload
 super + Escape
@@ -24,7 +24,7 @@ super + Escape
 
 # screen lock
 super + Pause
-	slock
+	sh $DOTFILES/rofi/scripts/powermenu.sh
 
 # decrease brightness
 XF86MonBrightnessDown
@@ -50,9 +50,9 @@ XF86AudioMute
 Print
 	scrot --quality 100 ~/Screenshots/screen-`date +%s`.jpg && notify-send --urgency=normal "Screenshot" "New screenshot taken"
 
-# take screenshot delayed
-ctrl + Print
-	scrot --quality 100 -d 10 ~/Screenshots/screen-`date +%s`.jpg && notify-send --urgency=normal "Screenshot" "New screenshot taken"
+# screenshot menu
+super + Print
+	sh $DOTFILES/rofi/scripts/scrotmenu.sh
 
 # rotate screen
 super + shift + {Left,Down,Up,Right}
