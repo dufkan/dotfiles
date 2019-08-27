@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/powermenu.rasi"
+rofi_command="rofi -theme $DOTFILES/rofi/themes/powermenu.rasi"
 
 power_off=""
 reboot=""

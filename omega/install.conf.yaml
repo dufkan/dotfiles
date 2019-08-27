@@ -21,7 +21,7 @@
     ~/.config/alacritty/alacritty.yml: 'alacritty.yml'
     ~/.config/polybar/config: 'polybar.conf'
     ~/.config/dunst/dunstrc: 'dunstrc'
-    ~/.config/rofi/: 'rofi'
+    ~/.config/rofi/config.rasi: 'rofi/config.rasi'
     ~/.config/fish/config.fish: 'fish.conf'
     ~/.config/compton.conf: 'compton.conf'
     ~/.XCompose: 'XCompose'
