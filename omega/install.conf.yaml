@@ -17,6 +17,7 @@
     ~/.xinitrc: 'xinitrc'
     ~/.config/bspwm/bspwmrc: 'bspwmrc'
     ~/.config/sxhkd/sxhkdrc: 'sxhkdrc'
+    ~/.config/libinput-gestures.conf: 'libinput-gestures.conf'
 
     ~/.config/alacritty/alacritty.yml: 'alacritty.yml'
     ~/.config/polybar/config: 'polybar/polybar.conf'
