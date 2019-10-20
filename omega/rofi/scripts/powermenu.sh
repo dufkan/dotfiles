@@ -19,6 +19,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
+        systemctl suspend &
         slock
         ;;
     $suspend)
