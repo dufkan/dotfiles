@@ -19,11 +19,10 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        systemctl suspend &
-        slock
+        usleep 150000; sh $DOTFILES/resources/lock.sh
         ;;
     $suspend)
-        systemctl suspend
+        usleep 150000; sh $DOTFILES/resources/lock.sh && systemctl suspend
         ;;
     $log_out)
         bspc quit

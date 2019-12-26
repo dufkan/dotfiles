@@ -23,7 +23,7 @@ super + Escape
 	pkill -USR1 -x sxhkd && notify-send --urgency=normal "Sxhkd" "Sxhdk reloaded"
 
 # screen lock
-super + Pause
+super + End
 	sh $DOTFILES/rofi/scripts/powermenu.sh
 
 # decrease brightness

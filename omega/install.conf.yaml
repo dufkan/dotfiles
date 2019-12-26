@@ -24,7 +24,7 @@
     ~/.config/dunst/dunstrc: 'dunstrc'
     ~/.config/rofi/config.rasi: 'rofi/config.rasi'
     ~/.config/fish/config.fish: 'fish.conf'
-    ~/.config/compton.conf: 'compton.conf'
+    ~/.config/picom.conf: 'picom.conf'
     ~/.XCompose: 'XCompose'
 
     ~/.neomuttrc: 'neomuttrc'

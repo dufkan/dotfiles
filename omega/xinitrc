@@ -3,4 +3,17 @@
 export _JAVA_AWT_WM_NONREPARENTING=1
 xrandr --output eDP1 --auto --primary
 xrandr --output HDMI1 --auto --above eDP1
-exec bspwm
+
+DEFAULT_WM=bspwm
+
+case "$2" in
+    bspwm)
+        exec bspwm
+        ;;
+    kde)
+        exec startplasma-x11
+        ;;
+    *)
+        exec $DEFAULT_WM
+        ;;
+esac

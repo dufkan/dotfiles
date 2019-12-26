@@ -1,10 +1,11 @@
 #!/bin/sh
 feh --bg-center $DOTFILES/resources/bg.* &
-compton -C &
+picom -C &
 dunst &
 sxhkd &
 polybar -r top &
 polybar -r bottom &
+xautolock -time 5 -locker "sh $DOTFILES/resources/lock.sh" -detectsleep &
 
 bspc monitor eDP1 -d I II III IV V VI
 bspc monitor HDMI1 -d HDMI
