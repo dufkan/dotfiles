@@ -21,6 +21,7 @@
 /* Hide navigation bar until F6 or Ctrl+L is pressed */
 :root #navigator-toolbox {
   --nav-bar-height: 36px;
+  z-index: 1;
 }
 :root:not([customizing]) #nav-bar {
   overflow-y: hidden;
