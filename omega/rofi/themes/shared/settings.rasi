@@ -26,7 +26,7 @@
   list-element-border:                  0px 0px 0px 8px;
   list-8-window-padding:                120px 100px;
 
-  /* option menus: powermenu and scrotmenu */
+  /* option menus: powermenu and screenmenu */
   option-element-padding:               85px 100px 70px -50px;
   option-3-window-padding:              390px 350px;
   option-3-listview-spacing:            150px;
