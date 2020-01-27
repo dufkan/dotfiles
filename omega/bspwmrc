@@ -5,9 +5,8 @@ dunst &
 sxhkd &
 polybar -r top &
 polybar -r bottom &
-xautolock -time 5 -locker "sh $DOTFILES/resources/lock.sh" -detectsleep &
+xss-lock -l -- lock &
 xsetroot -cursor_name left_ptr &
-
 
 bspc monitor eDP1 -d I II III IV V VI
 bspc monitor HDMI1 -d HDMI
