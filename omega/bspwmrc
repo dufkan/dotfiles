@@ -1,10 +1,11 @@
 #!/bin/sh
 feh --bg-center $DOTFILES/resources/bg.* &
 picom -C &
-dunst &
 sxhkd &
+dunst &
 polybar -r top &
 polybar -r bottom &
+udiskie &
 xss-lock -l -- lock &
 xsetroot -cursor_name left_ptr &
 

@@ -25,6 +25,7 @@
     ~/.config/rofi/config.rasi: 'rofi/config.rasi'
     ~/.config/fish/config.fish: 'fish.conf'
     ~/.config/picom.conf: 'picom.conf'
+    ~/.config/udiskie/config.yml: 'udiskie.yml'
     ~/.XCompose: 'XCompose'
 
     ~/.neomuttrc: 'neomuttrc'

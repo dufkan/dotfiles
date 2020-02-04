@@ -1,0 +1,46 @@
+program_options:
+  tray:             auto    # [bool] Enable the tray icon. "auto"
+                            # means auto-hide the tray icon when
+                            # there are no handled devices.
+
+  menu:             flat    # ["flat" | "nested"] Set the
+                            # systray menu behaviour.
+
+  automount:        false   # [bool] Enable automatic mounting.
+
+  notify:           true    # [bool] Enable notifications.
+
+  password_cache:   false   # [int] Password cache in minutes. Caching is
+                            # disabled by default. It can be disabled
+                            # explicitly by setting it to false
+
+quickmenu_actions: [mount, unmount, unlock, detach]
+  # List of actions to be shown in the quickmenu or the special value 'all'.
+  # The quickmenu is shown on left-click if using flat menu type.
+
+notification_actions:
+  # Define which actions should be shown on notifications. Note that there
+  # are currently only a limited set of actions available for each
+  # notification. Events that are not explicitly specified show the default
+  # set of actions. Specify an empty list if you don't want to see any
+  # notification for the specified event:
+
+  device_mounted:   [browse]
+  device_added:     [mount]
+
+icon_names:
+  # Customize the icon set used by the tray widget. Each entry
+  # specifies a list of icon names. The first installed icon from
+  # that list will be used.
+
+  media:   [drive-removable-media, media-optical]
+  browse:  [document-open, folder-open]
+  terminal: [terminal]
+  mount:   [udiskie-mount]
+  unmount: [udiskie-unmount]
+  unlock:  [udiskie-unlock]
+  lock:    [udiskie-lock]
+  eject:   [udiskie-eject, media-eject]
+  detach:  [udiskie-detach]
+  delete:  [udiskie-eject]
+  quit:    [application-exit]
