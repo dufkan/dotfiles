@@ -2,7 +2,6 @@
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 xrandr --output eDP1 --auto --primary
-xrandr --output HDMI1 --auto --above eDP1
 
 SESSION=${2:-bspwm}
 
