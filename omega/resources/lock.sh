@@ -1,6 +1,7 @@
 #!/bin/bash
 
 TMPBG=/tmp/screen.png
+DUNST_PAUSE=/tmp/dunst_pause
 
 pre_lock() {
     rectangles=" "
@@ -12,6 +13,7 @@ pre_lock() {
       rectangles+="rectangle $CX,$CY $((CX+300)),$((CY-80)) "
     done
     maim $TMPBG && convert $TMPBG -scale 5% -scale 2000% -draw "fill black fill-opacity 0.4 $rectangles" $TMPBG
+    killall -SIGUSR1 dunst # pause dunst
     return
 }
 
@@ -55,6 +57,7 @@ do_lock() {
 
 post_lock() {
     rm $TMPBG
+    [ -f "$DUNST_PAUSE" ] || killall -SIGUSR2 dunst # resume dunst
     return
 }
 
