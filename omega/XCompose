@@ -22,6 +22,16 @@ include "%L"
 <Multi_key> <Down> <Right>          : "↘"
 <Multi_key> <Right> <Down>          : "↘"
 
+
+### CURRENCY ###
+<Multi_key> <b> <t> <c> : "₿"
+<Multi_key> <u> <s> <d> : "$"
+<Multi_key> <e> <u> <r> : "€"
+<Multi_key> <p> <n> <d> : "₤" # pound
+<Multi_key> <s> <k> <l> : "₪" # shekel
+<Multi_key> <r> <u> <b> : "₽" # ruppee
+<Multi_key> <r> <u> <p> : "₹" # rubble
+
 ### GREEK LETTERS ###
 <Multi_key> <g> <A> : "Α"
 <Multi_key> <g> <a> : "α"
@@ -187,3 +197,5 @@ include "%L"
 <Multi_key> <c> <r> <a> <b>                  : "🦀"
 <Multi_key> <p> <l> <a> <y>                  : "🕹"
 <Multi_key> <1> <8>                          : "🔞"
+<Multi_key> <y> <a> <w> <n>                  : "🥱"
+<Multi_key> <b> <r> <a> <i> <n>              : "🧠"
