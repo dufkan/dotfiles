@@ -18,8 +18,10 @@ set reverse_name   = yes
 set include        = yes
 set forward_quote  = yes
 set timeout        = 60
+set mailcap_path   = $DOTFILES/mutt/mailcap
 
 set trash          = +Trash
 bind index D purge-message
 
 set new_mail_command="notify-send --urgency=normal 'New Email' '%u unread<br>(%m messages)' &"
+auto_view text/html
