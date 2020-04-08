@@ -20,13 +20,10 @@
 
 /* Hide navigation bar until F6 or Ctrl+L is pressed */
 :root #navigator-toolbox {
-  --nav-bar-height: 36px;
+  --nav-bar-height: 40px;
   z-index: 1;
 }
 :root:not([customizing]) #nav-bar {
-  overflow-y: hidden;
-  max-height: 0;
-  min-height: 0 !important;
   opacity: 0;
 }
 :root:not([customizing]) #nav-bar:focus-within {
