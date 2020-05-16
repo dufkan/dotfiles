@@ -4,15 +4,7 @@
 
 # term with tmux
 super + Return
-	alacritty -e tmux -f $DOTFILES/tmux.alacritty.conf
-
-# term with tmux attach
-super + shift + Return
-	alacritty -e tmux a
-
-# term without tmux
-super + ctrl + Return
-	alacritty
+	kitty
 
 # app menu
 super + space
