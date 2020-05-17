@@ -27,6 +27,7 @@
     ~/.config/fish/config.fish: 'fish.conf'
     ~/.config/picom.conf: 'picom.conf'
     ~/.config/udiskie/config.yml: 'udiskie.yml'
+    ~/.config/ranger/rc.conf: 'ranger/rc.conf'
     ~/.XCompose: 'XCompose'
 
     ~/.neomuttrc: 'neomuttrc'
