@@ -1,0 +1,11 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export DOTFILES="$HOME/.dotfiles/gamma"
+export TZ='Europe/Prague'
+export CC=gcc
+export CXX=g++
+export EDITOR=nvim
+export GTK_IM_MODULE=xim
+
+PATH="${PATH}:$HOME/.local/bin"
+PATH="${PATH}:$HOME/.cargo/bin"
+export PATH
