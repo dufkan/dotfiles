@@ -1,0 +1,13 @@
+set number
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set relativenumber
+syntax on
+
+set listchars=tab:>-,trail:.
+set list
+
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40

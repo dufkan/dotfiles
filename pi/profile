@@ -1,0 +1,9 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export DOTFILES="$HOME/.dotfiles/pi"
+export TZ='Europe/Prague'
+export CC=gcc
+export CXX=g++
+export EDITOR=vim
+
+PATH="${PATH}:$HOME/.local/bin"
+export PATH
