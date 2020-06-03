@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if [ "$1" = "click" ]; then
-    if [ -f /tmp/dunst_pause ]; then
+if [ "$1" = "click" ]
+then
+    if [ -f /tmp/dunst_pause ]
+    then
         killall -SIGUSR2 dunst
         rm -f /tmp/dunst_pause
         notify-send --urgency=normal "Notifications" "Notifications Resumed"
