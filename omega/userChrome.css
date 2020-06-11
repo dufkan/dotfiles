@@ -36,19 +36,6 @@
   display: inline;
 }
 
-/* Autohide navbar */
-#navigator-toolbox {
-  -moz-appearance: none;
-  border-top: none;
-}
-
-#urlbar:not(.megabar):not([focused='true']):-moz-lwtheme,
-#urlbar.megabar:not([focused='true']):-moz-lwtheme > #urlbar-background,
-#navigator-toolbox #searchbar:not(:focus-within):-moz-lwtheme,
-#navigator-toolbox {
-  border: none !important;
-}
-
 toolbox {
   z-index: 10;
   margin-top: 0px !important;
@@ -57,17 +44,43 @@ toolbox {
   margin-left: 250px !important;
 }
 
-#nav-bar {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out !important;
+/* https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/autohide_toolbox.css */
+
+:root[sizemode="fullscreen"]{ margin-top: 0px !important; }
+
+#navigator-toolbox{
+  position: fixed !important;
+  display: block;
+  background-color: var(--lwt-accent-color,black) !important;
+  transition: transform 82ms 33ms linear, opacity 82ms 33ms linear !important;
+  transform-origin: top;
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-:hover > toolbox,
-toolbox:focus-within {
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out !important ;
+#navigator-toolbox > *{ line-height: normal; pointer-events: auto }
+
+#navigator-toolbox,
+#navigator-toolbox > *{
+  width: calc(100vw - 250px);
+  -moz-appearance: none !important;
 }
-:hover > #nav-bar,
-toolbox:focus-within > #nav-bar {
-  opacity: 1;
+
+#navigator-toolbox:not(:focus-within):not(:hover){
+  transform: rotateX(86deg);
+  opacity: 0;
 }
+
+:root[sizemode="maximized"] #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
+
+:root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
+
+:root[customizing] #navigator-toolbox{
+  position: relative !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+#navigator-toolbox[inFullscreen] > #PersonalToolbar,
+#PersonalToolbar[collapsed="true"]{ display: none }
