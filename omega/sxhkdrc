@@ -6,6 +6,10 @@
 super + Return
 	kitty
 
+# file explorer
+super + e
+	kitty ranger
+
 # app menu
 super + space
 	sh $DOTFILES/rofi/scripts/appsmenu.sh
@@ -28,15 +32,15 @@ XF86MonBrightnessUp
 
 # decrease volume
 XF86AudioLowerVolume
-	amixer -q sset Master 5%-
+	pulsemixer --change-volume -5
 
 # increase volume
 XF86AudioRaiseVolume
-	amixer -q sset Master 5%+
+	pulsemixer --change-volume +5
 
 # mute sound
 XF86AudioMute
-	amixer -q sset Master toggle
+	pulsemixer --toggle-mute
 
 # take screenshot
 Print
