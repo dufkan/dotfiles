@@ -18,6 +18,9 @@ set listchars=tab:>-,trail:.
 set list
 
 set t_Co=256
+set termguicolors
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 hi CursorLine term=bold cterm=bold ctermbg=black
 
@@ -47,4 +50,5 @@ Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'tomtom/tcomment_vim'
 Plug 'ervandew/supertab'
+Plug 'vim-airline/vim-airline'
 call plug#end()
