@@ -54,7 +54,3 @@
     background = "#282c34"
     foreground = "#e06c75"
     timeout = 0
-
-[firefox]
-    appname = "Firefox"
-    new_icon = "firefox"
