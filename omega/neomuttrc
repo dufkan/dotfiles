@@ -25,3 +25,6 @@ bind index D purge-message
 
 set new_mail_command="notify-send --urgency=normal 'New Email' '%u unread<br>(%m messages)' &"
 auto_view text/html
+
+bind pager <up> previous-line
+bind pager <down> next-line
