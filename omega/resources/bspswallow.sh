@@ -25,7 +25,7 @@ swallow() {
         echo $SWALLOW | sed -E -e 's/[[:blank:]]+/\n/g' | grep "^$(get_class "$swallowerid")$" || return
         echo $TERMINAL | sed -E -e 's/[[:blank:]]+/\n/g' | grep "^$(get_class "$swallowingid")$" || return
         echo "$swallowerid $swallowingid" >> /tmp/swallowids
-        bspc node "$swallowingid" --flag hidden=on
+        bspc node "$swallowingid" --flag hidden=on --flag sticky=on
     fi
 }
 
@@ -35,7 +35,7 @@ spit() {
     grep "^$spitterid" /tmp/swallowids || return
     spittingid=$(grep "^$spitterid" /tmp/swallowids | head -n1 | awk '{print $2}')
 
-    bspc node "$spittingid" --flag hidden=off
+    bspc node "$spittingid" --flag hidden=off --flag sticky=off
 
     termdesktop=$(bspc query -D -n "$spittingid")
     [ "$termdesktop" = "$spitterdesktop" ] || bspc node "$spittingid" -d "$spitterdesktop"

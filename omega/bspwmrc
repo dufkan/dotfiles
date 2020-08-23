@@ -8,7 +8,7 @@ polybar -r bottom &
 udiskie &
 xss-lock -l -- lock &
 xsetroot -cursor_name left_ptr &
-pidof bspswallow || bspswallow Zathura vlc feh &
+pgrep bspswallow || bspswallow Zathura vlc feh &
 
 bspc monitor eDP1 -d I II III IV V VI
 bspc monitor DP2 -d DP2
