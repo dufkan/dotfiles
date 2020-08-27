@@ -2,7 +2,7 @@
 ### GENERAL HOTKEYS ###
 #######################
 
-# term with tmux
+# term
 super + Return
 	kitty
 
@@ -79,6 +79,10 @@ super + y
 # swap the current node and the biggest node
 super + g
 	bspc node -s biggest
+
+# add or remove desktop
+super + {_,shift + }d
+	bash $DOTFILES/resources/bspwm_desktops.sh {+,-}
 
 ## state/flags ##
 
