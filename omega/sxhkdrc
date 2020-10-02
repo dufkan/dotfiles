@@ -132,11 +132,11 @@ super + shift + bracket{left,right}
 
 # focus different monitor
 super + {Prior,Next}
-	bspc monitor -f {DP2, eDP1}
+	bspc monitor -f {(get_monitor), eDP1}
 
 # drag node between monitors
 super + shift + {Prior,Next}
-	bspc node -m {DP2, eDP1} -f
+	bspc node -m {(get_monitor), eDP1} -f
 
 ## preselect ##
 

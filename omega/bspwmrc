@@ -3,15 +3,15 @@ feh --bg-center $DOTFILES/resources/bg.* &
 picom -C &
 sxhkd &
 dunst &
-polybar -r top &
-polybar -r bottom &
+polybar top &
+polybar bottom &
 udiskie &
 xss-lock -l -- lock &
 xsetroot -cursor_name left_ptr &
 pgrep bspswallow || bspswallow Zathura vlc feh &
 
-bspc monitor eDP1 -d I II III IV V VI
-bspc monitor DP2 -d DP2
+autorandr -c
+bash $DOTFILES/resources/bspwm_desktops.sh
 
 bspc config border_width 1
 bspc config window_gap 12

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COUNT=$(bspc query -D | wc -l)
+COUNT=$(bspc query -D -m eDP1 | wc -l)
 NAMES="I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI XVII XVIII XIX XX"
 
 if [ "$1" == "+" ]
