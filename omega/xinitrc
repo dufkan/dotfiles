@@ -2,7 +2,7 @@
 
 export AWT_TOOLKIT=MToolkit
 wmname compiz
-xrandr --output eDP1 --auto --primary
+xmodmap $HOME/.xmodmaprc
 
 SESSION=${2:-bspwm}
 

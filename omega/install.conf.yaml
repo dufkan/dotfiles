@@ -18,6 +18,7 @@
     ~/.config/bspwm/bspwmrc: 'bspwmrc'
     ~/.config/sxhkd/sxhkdrc: 'sxhkdrc'
     ~/.config/libinput-gestures.conf: 'libinput-gestures.conf'
+    ~/.xmodmaprc: 'xmodmaprc'
 
     ~/.config/alacritty/alacritty.yml: 'alacritty.yml'
     ~/.config/kitty/kitty.conf: 'kitty.conf'
