@@ -3,6 +3,8 @@
 TMPBG=/tmp/screen.png
 DUNST_PAUSE=/tmp/dunst_pause
 
+export SDL_VIDEO_FULLSCREEN_HEAD=0
+
 pre_lock() {
     rectangles=" "
     SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
@@ -19,12 +21,14 @@ pre_lock() {
 
 do_lock() {
     i3lock \
-      -i $TMPBG \
+      --color=00000000 \
+      --image=$TMPBG \
+      --screen=0 \
       --indpos="x+290:h-120" \
       --timepos="ix-180:iy" \
       --datepos="tx+24:ty+25" \
       --clock \
-      --datestr "Type password to unlock..." \
+      --datestr="Type password to unlock..." \
     \
       --insidecolor=00000000 \
       --insidevercolor=fecf4dff \
@@ -51,6 +55,10 @@ do_lock() {
       --wrongcolor=ffffffff \
       --timecolor=ffffffff \
       --datecolor=ffffffff \
+    \
+      --pass-media-keys \
+      --pass-screen-keys \
+      --pass-volume-keys \
     $LOCK_EXTRA_ARGS
     return
 }

@@ -16,7 +16,7 @@ super + space
 
 # sxhkd reload
 super + Escape
-	pkill -USR1 -x sxhkd && notify-send --urgency=normal "Key bindings" "Key bindings reloaded"
+	pkill -USR1 -x sxhkd && notify-send --urgency=normal "Key Bindings" "Reloaded"
 
 # screen lock
 super + End
@@ -46,14 +46,17 @@ XF86AudioMute
 Print
 	maim $HOME/Screenshots/screen-$(date +%s).png && notify-send --urgency=normal "Screenshot" "New screenshot taken"
 
-
 # screenshot menu
 super + Print
 	sh $DOTFILES/rofi/scripts/screenmenu.sh
 
-# rotate screen
-super + shift + {Left,Down,Up,Right}
-	xrandr -o {left,normal,inverted,right}
+# clipboard history
+super + v
+	sh $DOTFILES/rofi/scripts/clipboard.sh
+
+# clipboard history
+super + shift + v
+	greenclip clear && notify-send --urgency normal "Clipboard" "History cleared"
 
 
 #####################
@@ -132,11 +135,11 @@ super + shift + bracket{left,right}
 
 # focus different monitor
 super + {Prior,Next}
-	bspc monitor -f {(get_monitor), eDP1}
+	bspc monitor -f {next,prev}
 
 # drag node between monitors
 super + shift + {Prior,Next}
-	bspc node -m {(get_monitor), eDP1} -f
+	bspc node -m {next,prev} -f
 
 ## preselect ##
 
