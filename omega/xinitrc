@@ -1,6 +1,8 @@
 #!/bin/bash
 
 export AWT_TOOLKIT=MToolkit
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
 wmname compiz
 xmodmap $HOME/.xmodmaprc
 
@@ -8,6 +10,6 @@ SESSION=${2:-bspwm}
 
 case $SESSION in
     bspwm) exec bspwm;;
-    kde) exec startplasma-x11;;
+    gnome) exec gnome-session;;
     *) exec $2;;
 esac

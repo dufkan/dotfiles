@@ -44,7 +44,7 @@ XF86AudioMute
 
 # take screenshot
 Print
-	maim $HOME/Screenshots/screen-$(date +%s).png && notify-send --urgency=normal "Screenshot" "New screenshot taken"
+	maim $HOME/Pictures/screen-$(date +%s).png && notify-send --urgency=normal "Screenshot" "New screenshot taken"
 
 # screenshot menu
 super + Print
